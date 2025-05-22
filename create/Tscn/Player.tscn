@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c5kntt5h5ncqx"]
+[gd_scene load_steps=5 format=3 uid="uid://c5kntt5h5ncqx"]
 
 [ext_resource type="PackedScene" uid="uid://bq86r4yll8po" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_fullglove_low.tscn" id="1_txcnr"]
 [ext_resource type="PackedScene" uid="uid://xqimcf20s2jp" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_fullglove_low.tscn" id="2_kudba"]
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="2_s726c"]
+[ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="3_s726c"]
 
 [node name="Player" type="XROrigin3D"]
 
@@ -13,6 +14,10 @@ tracker = &"left_hand"
 
 [node name="FunctionPickup" parent="LeftHand/LeftHand" instance=ExtResource("2_s726c")]
 
+[node name="FunctionPointer" parent="LeftHand" instance=ExtResource("3_s726c")]
+show_laser = 2
+laser_length = 1
+
 [node name="RightHand" type="XRController3D" parent="."]
 tracker = &"right_hand"
 
@@ -20,4 +25,9 @@ tracker = &"right_hand"
 
 [node name="FunctionPickup2" parent="RightHand/RightHand" instance=ExtResource("2_s726c")]
 
+[node name="FunctionPointer" parent="RightHand" instance=ExtResource("3_s726c")]
+show_laser = 2
+laser_length = 1
+
 [node name="XRCamera3D" type="XRCamera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.756395, 0)
